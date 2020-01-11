@@ -39,7 +39,7 @@ class Token():
             if '0' <= first_char <= '9':
                 v_type = AnalysisType.number
             elif value in KEYWORD_SET:
-                v_self.type = AnalysisType.keyword
+                v_type = AnalysisType.keyword
         elif v_type == AnalysisType.annotation:
             value = value[1:]
         elif v_type == AnalysisType.string:

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 """
 Analysis Class File
 """
@@ -40,4 +41,12 @@ class Token():
             elif value in KEYWORD_SET:
                 v_self.type = AnalysisType.keyword
         elif v_type == AnalysisType.annotation:
-            value = 
+            value = value[1:]
+        elif v_type == AnalysisType.string:
+            value = value[1:-1]
+        elif v_type == AnalysisType.regex:
+            value = value[1:-1]
+        elif v_type == AnalysisType.endsymbol:
+            value = None
+        self.v_type = v_type
+        self.value = value
